@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { h5Bold, h5Medium, h6Bold, h6Medium, h7Bold, h7Medium, h8Light, h8Medium } from "../../styles/common";
+import { h3Bold, h4Bold, h5Bold, h5Medium, h6Bold, h6Medium, h7Bold, h7Medium, h8Light, h8Medium } from "../../styles/common";
 import { Link } from "react-router-dom";
 
 
@@ -7,117 +7,111 @@ const S = {};
 
 
 S.MainWrap = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
 S.BannerWrap = styled.div`
-    background:
-        url('/assets/images/mainbackground.png') bottom center / 1900px auto no-repeat,
-        url('/assets/images/main.png') top center /  1900px auto no-repeat;
-    min-height: 930px;     
-    padding-top: 50px;
-    padding-bottom: 180px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-`
+  background:
+    url('/assets/images/mainbackground.png') bottom center / 1900px auto no-repeat,
+    url('/assets/images/main.png') top center / 1900px auto no-repeat;
+  min-height: 930px;
+  padding-top: 50px;
+  padding-bottom: 180px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+`;
 
 S.ContentRow = styled.div`
-    width: 1400px;
-    display: flex;
-`
+  width: 1400px;
+  display: flex;
+`;
 
 S.MapPane = styled.div`
-    flex: 0 0 494px;   
-    height: 590px;
-    border-radius: 16px;
-    overflow: hidden;
+  flex: 0 0 494px;
+  height: 590px;
+  border-radius: 16px;
+  overflow: hidden;
 `;
+
 S.SidePane = styled.div`
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 S.InfoCard = styled.div`
-    width: 330px;
-    height: 390px;
-    border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-`
+  width: 330px;
+  height: 390px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+`;
+
 S.InfoHeaderWrap = styled.div`
-    display: flex;
-`
+  display: flex;
+`;
+
 S.InfoHeaderLeft = styled.div`
-    width: 30px;
-    height: 30px;
-    margin: 20px 0px 0px 16px;
-    border-radius: 20px;
-    background-color: #2993F7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-        margin: 0px 0px 0px 1.5px;
-        width: 18px;
-        height: 18px;
+  width: 30px;
+  height: 30px;
+  margin: 20px 0px 0px 16px;
+  border-radius: 20px;
+  background-color: #2993F7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin: 0px 0px 0px 1.5px;
+    width: 18px;
+    height: 18px;
+  }
+`;
 
-    }
-`
 S.InfoCardMiddleWrap = styled.div`
-    margin: 16px 0px 0px 0px;
-    display: flex;
-    justify-content: center;
-    img {
-        width: 148px;
-        height: 220px;
-    }
-`
-S.InfoCardFloorWrap = styled.div`
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 12px;        
-    ${h6Medium}
-`
-S.InfoCardTitleWrap = styled.div`
-    margin: 20px 0px 0px 0px;
-    ${h5Bold}
-`
-S.InfoCardMovie = styled.div`
-    margin: 20px 0px 0px 0px;
+  margin: 16px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 148px;
+    height: 220px;
+  }
+`;
 
-`
+S.InfoCardFloorWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  ${h6Medium}
+`;
+
+S.InfoCardTitleWrap = styled.div`
+  margin: 20px 0px 0px 0px;
+  ${h5Bold}
+`;
+
+S.InfoCardMovie = styled.div`
+  margin: 20px 0px 0px 0px;
+`;
+
 S.InfoCardTitle = styled.div`
-    margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
   ${h6Medium}
   color: #222;
 `;
 
-S.ReservationCard = styled.div`
-    width: 330px;
-    height: 232px;
-    border-radius: 20px;
-    display: flex;
-    margin: 30px;
-
-    background: #fff;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
-`
-S.ReservationTitle = styled.div`
-    ${h6Medium}
-`
+// S.ReservationCard 중복 선언 제거 후 아래 상세 버전만 남김
 S.ReservationCard = styled.div`
   width: 330px;
   height: 232px;
   margin-top: 18px;
   border-radius: 20px;
   background: #fff;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
   padding: 18px 18px 16px;
   box-sizing: border-box;
   display: flex;
@@ -201,6 +195,89 @@ S.ReservationButton = styled.button`
 `;
 
 
+
+S.Content = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+  margin-top: -500px;
+`;
+
+
+S.SchoolInfo = styled.div`
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+`;
+
+S.ListTitle = styled.h2`
+  margin: 38px;
+  ${h4Bold}
+  color: #222;
+  margin-bottom: 24px;
+`;
+
+S.CardGrid = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 2px;
+`;
+
+S.Card = styled.div`
+  margin: 38px;
+  width: 330px;
+  height: 390px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+`;
+
+/* 핀 아이콘이 들어갈 자리 */
+S.CardIcon = styled.div`
+  margin-bottom: 12px;
+  
+  img {
+    width: 24px; /* 아이콘 크기 */
+    height: auto;
+  }
+`;
+
+/* 학교 사진 영역 */
+S.CardImg = styled.div`
+  width: 100%;
+  height: 180px;
+  background-color: #eee; /* 사진 없으면 회색 배경 */
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+/* 학교 이름 */
+S.SchoolName = styled.div`
+  ${h5Bold}
+  color: #333;
+  margin-bottom: 10px;
+`;
+
+/* 주소, 전화번호 한 줄 */
+S.InfoLine = styled.div`
+  display: flex;
+  align-items: center;
+  ${h6Medium}
+  color: #666;
+  margin-bottom: 6px;
+
+  span {
+    margin-left: 8px;
+  }
+`;
 
 
 export default S;
