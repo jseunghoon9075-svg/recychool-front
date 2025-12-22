@@ -54,33 +54,32 @@ const Movie = () => {
 
 
   const handleReservation = async () => {
-    // 1. 학교가 선택되었는지 확인
     if (!selectedSchoolId) {
       alert("학교를 먼저 선택해주세요!");
       return;
     }
 
-    // 2. 서버로 보낼 데이터 준비
-    const requestData = {
-      schoolId: selectedSchoolId,
-      movieTitle: "코렐라인" 
-    };
-
     try {
-      // 3. 서버로 전송 (POST 요청)
-      const res = await fetch(`${API}/reservations/write`, {
+      // 쿼리 파라미터 방식으로 전송
+      const params = new URLSearchParams({
+        schoolId: selectedSchoolId,
+        movieTitle: "코렐라인",
+        userId: "1"
+      });
+
+      const res = await fetch(`${API}/reservations/write?${params.toString()}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(requestData), 
       });
 
       if (res.ok) {
         alert("예약 성공!");
         fetchRemainingSeats(); 
       } else {
-        alert("예약 실패... 다시 시도해주세요.");
+        const errorData = await res.json();
+        alert(errorData?.message || "예약 실패... 다시 시도해주세요.");
       }
     } catch (error) {
       console.error(error);
@@ -172,40 +171,37 @@ const Movie = () => {
                   <img src="/assets/images/red.png" alt="위치 아이콘" />
                 </S.CardIcon>
                 <S.CardImg>
-                  <img src="/assets/images/" alt="학교" />
+                  <img src="/assets/images/movieschool1.png" alt="학교" />
                 </S.CardImg>
-
                 <S.SchoolName>양평초</S.SchoolName>
-                <S.InfoLine>📍 <span>경기도 포천시 영중면 전영로1429번길 5</span></S.InfoLine>
-                <S.InfoLine>📞 <span>031-539-0033</span></S.InfoLine>
+                <S.InfoLine><img src="/assets/images/marker.png" alt="학교 주소" /><span>경기도 포천시 영중면 전영로1429번길 5</span></S.InfoLine>
+                <S.InfoLine><img src="/assets/images/phone.png" alt="전화" /><span>031-539-0033</span></S.InfoLine>
               </S.Card>
 
               {/* 2번 카드 */}
               <S.Card>
                 <S.CardIcon>
-                  <img src="/assets/images/red.png" alt="위치 아이콘" />
+                  <img src="/assets/images/blue.png" alt="위치 아이콘" />
                 </S.CardIcon>
                 <S.CardImg>
-                  <img src="/assets/images/" alt="학교" />
+                  <img src="/assets/images/movieschool2.jpg" alt="학교" />
                 </S.CardImg>
-
                 <S.SchoolName>덕수고</S.SchoolName>
-                <S.InfoLine>📍 <span>서울특별 성동구 왕십리로 199</span></S.InfoLine>
-                <S.InfoLine>📞 <span>02-2286-3704</span></S.InfoLine>
+                <S.InfoLine><img src="/assets/images/marker.png" alt="학교 주소" /><span>서울특별시 성동구 왕십리로 199</span></S.InfoLine>
+                <S.InfoLine><img src="/assets/images/phone.png" alt="전화" /><span>02-2286-3704</span></S.InfoLine>
               </S.Card>
 
               {/* 3번 카드 */}
               <S.Card>
                 <S.CardIcon>
-                  <img src="/assets/images/red.png" alt="위치 아이콘" />
+                  <img src="/assets/images/yellow.png" alt="위치 아이콘" />
                 </S.CardIcon>
                 <S.CardImg>
-                  <img src="/assets/images/" alt="학교" />
+                  <img src="/assets/images/movieschool3.png" alt="학교" />
                 </S.CardImg>
-                
                 <S.SchoolName>구.백성초</S.SchoolName>
-                <S.InfoLine>📍 <span>경기도 안성시 백성2길 59</span></S.InfoLine>
-                <S.InfoLine>📞 <span>031-678-5271</span></S.InfoLine>
+                <S.InfoLine><img src="/assets/images/marker.png" alt="학교 주소" /><span>경기도 안성시 백성2길 59</span></S.InfoLine>
+                <S.InfoLine><img src="/assets/images/phone.png" alt="전화" /><span>031-678-5271</span></S.InfoLine>
               </S.Card>
             </S.CardGrid>
           </S.SchoolInfo>

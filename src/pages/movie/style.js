@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { h3Bold, h4Bold, h5Bold, h5Medium, h6Bold, h6Medium, h7Bold, h7Medium, h8Light, h8Medium } from "../../styles/common";
+import { h3Bold, h4Bold, h5Bold, h5Medium, h6Bold, h6Light, h6Medium, h7Bold, h7Medium, h8Light, h8Medium } from "../../styles/common";
 import { Link } from "react-router-dom";
-
 
 const S = {};
 
@@ -45,7 +44,7 @@ S.SidePane = styled.div`
 
 S.InfoCard = styled.div`
   width: 330px;
-  height: 390px;
+  height: 360px;
   border-radius: 20px;
   background: #fff;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
@@ -53,6 +52,7 @@ S.InfoCard = styled.div`
 
 S.InfoHeaderWrap = styled.div`
   display: flex;
+  gap: 5px;
 `;
 
 S.InfoHeaderLeft = styled.div`
@@ -91,6 +91,7 @@ S.InfoCardFloorWrap = styled.div`
 
 S.InfoCardTitleWrap = styled.div`
   margin: 20px 0px 0px 0px;
+
   ${h5Bold}
 `;
 
@@ -104,10 +105,9 @@ S.InfoCardTitle = styled.div`
   color: #222;
 `;
 
-// S.ReservationCard 중복 선언 제거 후 아래 상세 버전만 남김
 S.ReservationCard = styled.div`
   width: 330px;
-  height: 232px;
+  height: 224px;
   margin-top: 18px;
   border-radius: 20px;
   background: #fff;
@@ -132,7 +132,7 @@ S.ReservationDot = styled.div`
 `;
 
 S.ReservationTitle = styled.div`
-  ${h6Bold}
+  ${h5Bold}
   color: #222;
 `;
 
@@ -148,15 +148,16 @@ S.ReservationRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 5px;
 `;
 
 S.ReservationLabel = styled.span`
-  ${h8Light}
+  ${h7Medium}
   color: #666;
 `;
 
 S.ReservationValue = styled.span`
-  ${h8Medium}
+  ${h7Medium}
   color: #222;
 `;
 
@@ -166,14 +167,14 @@ S.ReservationSelect = styled.select`
   border: 1px solid #e7e7e7;
   border-radius: 8px;
   padding: 0 10px;
-  ${h8Medium}
+  ${h7Medium}
   color: #222;
   background: #fff;
   outline: none;
 `;
 
 S.ReservationSeat = styled.span`
-  ${h8Medium}
+  ${h7Medium}
   color: #2993F7;
 `;
 
@@ -194,8 +195,6 @@ S.ReservationButton = styled.button`
   }
 `;
 
-
-
 S.Content = styled.div`
   width: 100%;
   display: flex;
@@ -203,7 +202,6 @@ S.Content = styled.div`
   padding-bottom: 100px;
   margin-top: -500px;
 `;
-
 
 S.SchoolInfo = styled.div`
   width: 1400px;
@@ -227,29 +225,40 @@ S.CardGrid = styled.div`
 S.Card = styled.div`
   margin: 38px;
   width: 330px;
-  height: 390px;
+  height: 380px;
   border-radius: 20px;
   background: #fff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 `;
 
-/* 핀 아이콘이 들어갈 자리 */
+
 S.CardIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 12px;
   
   img {
-    width: 24px; /* 아이콘 크기 */
-    height: auto;
+    width: 28px;
+    height: 30px;
+  
   }
 `;
 
-/* 학교 사진 영역 */
+
 S.CardImg = styled.div`
   width: 100%;
-  height: 180px;
-  background-color: #eee; /* 사진 없으면 회색 배경 */
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
   border-radius: 12px;
-  margin-bottom: 20px;
   overflow: hidden;
 
   img {
@@ -259,23 +268,30 @@ S.CardImg = styled.div`
   }
 `;
 
-/* 학교 이름 */
 S.SchoolName = styled.div`
   ${h5Bold}
-  color: #333;
-  margin-bottom: 10px;
+  color: #222;
+  margin-bottom: 8px;
 `;
 
-/* 주소, 전화번호 한 줄 */
 S.InfoLine = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   ${h6Medium}
-  color: #666;
+  color: #666666;
   margin-bottom: 6px;
-
+  
+  img {
+    width: 11px;
+    height: 15px;
+    margin-right: 8px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  
   span {
-    margin-left: 8px;
+    flex: 1;
+    line-height: 1.4;
   }
 `;
 
