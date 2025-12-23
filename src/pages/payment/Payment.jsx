@@ -198,7 +198,7 @@ const Payment = () => {
 
       await res.json();
       alert("결제가 완료되었습니다.");
-      navigate(`/complete/${reserve.id}`);
+      navigate(`/complete/${reserve.id}?extend=${isExtend}`);
     } catch (error) {
       console.error("결제 실패:", error);
       alert("결제가 실패(또는 취소)되었습니다.");
