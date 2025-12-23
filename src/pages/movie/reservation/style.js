@@ -1,17 +1,7 @@
 import styled from "styled-components";
+import { h3Medium, h4Bold, h4Medium, h5Bold, h5Medium, h6Bold, h6Light, h6Medium, h7Bold, h7Medium, h8Light, h8Medium } from "../../../styles/common";
 
 const S = {};
-
-const GREEN = "#76C043";
-const GREEN_LIGHT = "#EAF6DF";
-const BORDER = "#D9D9D9";
-const BG = "#F5F5F5";
-
-S.Page = styled.div`
-  min-height: 100vh;
-  background: ${BG};
-`;
-
 
 S.Body = styled.main`
   padding: 70px 16px 90px;
@@ -25,14 +15,13 @@ S.CenterWrap = styled.section`
 S.Title = styled.h2`
   text-align: center;
   font-size: 22px;
-  font-weight: 800;
-  margin: 0 0 22px 0;
+  ${h4Bold}
+  margin: 0 0 15px 0;
 `;
 
 S.StateText = styled.p`
   text-align: center;
   margin: 18px 0 0;
-  color: ${(p) => (p.$error ? "#D64545" : "#666")};
 `;
 
 S.InfoTable = styled.table`
@@ -45,15 +34,13 @@ S.InfoTable = styled.table`
 
   th,
   td {
-    border-bottom: 1px solid ${BORDER};
+    border-bottom: 1px solid #e5e5e5ff;
     padding: 14px 18px;
-    font-size: 14px;
   }
 
   th {
     width: 140px;
-    background: #f3f3f3;
-    font-weight: 700;
+    background: #F9FAFB;
     text-align: center;
     color: #444;
   }
@@ -64,12 +51,6 @@ S.ButtonRow = styled.div`
   display: flex;
   justify-content: center;
   gap: 26px;
-
-  @media (max-width: 520px) {
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
 `;
 
 S.PrimaryButton = styled.button`
@@ -77,15 +58,11 @@ S.PrimaryButton = styled.button`
   height: 52px;
   border: none;
   border-radius: 4px;
-  background: ${GREEN};
+  background-color: ${({ theme }) => theme.PALETTE.primary.green.main};
   color: #fff;
-  font-weight: 700;
+  ${h5Medium}
   cursor: pointer;
 
-  @media (max-width: 520px) {
-    width: 100%;
-    max-width: 360px;
-  }
 `;
 
 S.SecondaryButton = styled.button`
@@ -93,15 +70,11 @@ S.SecondaryButton = styled.button`
   height: 52px;
   border: none;
   border-radius: 4px;
-  background: ${GREEN_LIGHT};
-  color: #2b2b2b;
-  font-weight: 700;
+  background-color: ${({ theme }) => theme.PALETTE.primary.green.light};
+  color: ${({ theme }) => theme.PALETTE.neutral.black.main};
+  ${h6Medium}
   cursor: pointer;
 
-  @media (max-width: 520px) {
-    width: 100%;
-    max-width: 360px;
-  }
 `;
 
 

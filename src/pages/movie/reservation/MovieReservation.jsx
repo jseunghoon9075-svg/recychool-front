@@ -99,7 +99,6 @@ export default function MovieReservation() {
   const goMain = () => navigate("/");
 
   return (
-    <S.Page>
       <S.Body>
         <S.CenterWrap>
           <S.Title>영화 예약 정보</S.Title>
@@ -161,6 +160,5 @@ export default function MovieReservation() {
           )}
         </S.CenterWrap>
       </S.Body>
-    </S.Page>
   );
 }
